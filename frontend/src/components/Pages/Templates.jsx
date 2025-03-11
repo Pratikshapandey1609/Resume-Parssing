@@ -44,7 +44,7 @@ const ResumeTemplates = ({ isNavbarOpen }) => {
         <div className="max-w-6xl w-full text-center">
           {/* Header */}
           <motion.h2
-            className="text-4xl font-extrabold text-white mb-8"
+            className="text-4xl font-extrabold text-gray mb-8"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -69,10 +69,10 @@ const ResumeTemplates = ({ isNavbarOpen }) => {
                 />
 
                 {/* Template Info */}
-                <h3 className="text-lg font-semibold text-white mt-4">
+                <h3 className="text-lg font-semibold text-gray  mt-4">
                   {template.name}
                 </h3>
-                <p className="text-gray-300 text-sm mt-1">
+                <p className="text-gray  text-sm mt-1">
                   {template.description}
                 </p>
 
@@ -90,7 +90,7 @@ const ResumeTemplates = ({ isNavbarOpen }) => {
             ))}
           </div>
         </div>
-        <Chatbot/>
+        <Chatbot />
       </div>
     </section>
   );
