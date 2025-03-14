@@ -74,7 +74,7 @@ function Dashboard() {
   const [jobRole, setJobRole] = useState("");
   const [company, setCompany] = useState("");
 
-  const jobRoles = ["Software Engineer", "Data Scientist", "UI/UX Designer", "Product Manager"];
+  const jobRoles = ["Software Engineer", "web Developer" , "Data Scientist", "UI/UX Designer", "Product Manager"];
   const companies = ["Google", "Microsoft", "Amazon", "Meta", "Tesla"];
 
   useEffect(() => {

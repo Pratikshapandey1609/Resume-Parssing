@@ -39,7 +39,7 @@ function Chatbot() {
     <div className="fixed bottom-5 right-5 z-50">
       {/* Chatbot Toggle Button */}
       <button
-        className="bg-zinc-700 text-white p-3 rounded-full shadow-lg hover:bg-purple-800 transition-all"
+        className="bg-gray-700 text-white p-3 rounded-full shadow-lg hover:bg-zinc-900 transition-all"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <IoClose size={24} /> : <IoChatbubbleEllipsesOutline size={24} />}
@@ -80,7 +80,7 @@ function Chatbot() {
               onChange={(e) => setQuestion(e.target.value)}
               placeholder="Ask me anything..."
             />
-            <button className="bg-zinc-700 text- px-4 py-2 rounded-full  hover:bg-purple-800 transition-all" onClick={generateAnswer}>
+            <button className="bg-zinc-700 text- px-4 py-2 rounded-full  hover:bg-gray-800 transition-all" onClick={generateAnswer}>
               <IoMdSend size={18} />
             </button>
           </div>

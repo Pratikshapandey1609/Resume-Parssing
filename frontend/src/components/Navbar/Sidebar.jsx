@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { IoMdLogOut } from "react-icons/io"; // ✅ CORRECT
+
 import {
   FaHome,
   FaClipboardCheck,
@@ -14,24 +16,25 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { name: "Home", path: "/", icon: <FaHome size={22} /> },
-    { name: "Review", path: "/review", icon: <FaClipboardCheck size={22} /> },
-    { name: "Dashboard", path: "/dashboard", icon: <FaUser size={22} /> },
-    { name: "Templates", path: "/templates", icon: <FaLayerGroup size={22} /> },
-    { name: "Settings", path: "/settings", icon: <FaCog size={22} /> },
-    { name: "Login / SignUp", path: "/login", icon: <FaSignInAlt size={22} /> },
-    { name: "Sign Up", path: "/signup", icon: <FaUserPlus size={22} /> },
+    { name: "Home", path: "/", icon: <FaHome size={20} /> },
+    { name: "Review", path: "/review", icon: <FaClipboardCheck size={20} /> },
+    { name: "Dashboard", path: "/dashboard", icon: <FaUser size={20} /> },
+    { name: "Templates", path: "/templates", icon: <FaLayerGroup size={20} /> },
+    { name: "Settings", path: "/settings", icon: <FaCog size={20} /> },
+    { name: "Login / SignUp", path: "/login", icon: <FaSignInAlt size={20} /> },
+    { name: "Sign Up", path: "/signup", icon: <FaUserPlus size={20} /> },
+    { name: "logout", path: "/logout", icon: <IoMdLogOut size={20} /> },
   ];
 
   return (
     <div
-      className={`fixed h-full transition-all duration-300 ${
+      className={`fixed h-full  transition-all duration-300 ${
         isOpen ? "w-56" : "w-16"
-      } bg-gradient-to-b from-red-600 to-purple-700 text-white backdrop-blur-lg`}
+      } bg-gradient-to-b from-gray-700 to-gray-900 text-white backdrop-blur-lg`}
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
-      <ul className="mt-10 space-y-6">
+      <ul className="mt-3  space-y-2">
         {menuItems.map((item) => (
           <li key={item.name}>
             <Link
@@ -49,8 +52,6 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-
-
 
 // import React, { useState } from "react";
 // import { Link } from "react-router-dom";

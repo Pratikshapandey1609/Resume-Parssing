@@ -11,8 +11,7 @@
 // import UserGuidePage from "./components/Pages/UserGuide";
 // import i18n from "./i18n";
 
-
-// // Context for Dark Mode 
+// // Context for Dark Mode
 // export const ThemeContext = createContext();
 
 // function App() {
@@ -61,8 +60,6 @@
 
 // export default App;
 
-
-
 import React, { useState, useEffect, createContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Navbar/Sidebar";
@@ -76,8 +73,10 @@ import Home from "./components/Navbar/Home";
 import UserGuidePage from "./components/Pages/UserGuide";
 import i18n from "./i18n"; // Import i18n
 import UploadResume from "./components/Pages/UploadResume";
+import ScrollToTop from "./components/ScrollToTop";
+import Logout from "./components/Pages/Logout";
 
-// Context for Dark Mode 
+// Context for Dark Mode
 export const ThemeContext = createContext();
 
 function App() {
@@ -85,7 +84,9 @@ function App() {
     localStorage.getItem("darkMode") === "true"
   );
 
-  const [language, setLanguage] = useState(localStorage.getItem("language") || "en");
+  const [language, setLanguage] = useState(
+    localStorage.getItem("language") || "en"
+  );
 
   useEffect(() => {
     localStorage.setItem("darkMode", darkMode);
@@ -100,7 +101,14 @@ function App() {
   return (
     <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
       <Router>
-        <div className={`${darkMode ? "dark bg-gray-900 text-white" : "bg-gray-100 text-gray-900"} min-h-screen`}>
+        <ScrollToTop />
+        <div
+          className={`${
+            darkMode
+              ? "dark bg-gray-900 text-white"
+              : "bg-gray-100 text-gray-900"
+          } min-h-screen`}
+        >
           <div className="flex">
             <Sidebar />
             <div className="flex-1 p-6">
@@ -109,11 +117,15 @@ function App() {
                 <Route path="/review" element={<Review />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/templates" element={<Templates />} />
-                <Route path="/settings/*" element={<Settings onLanguageChange={setLanguage} />} />
+                <Route
+                  path="/settings/*"
+                  element={<Settings onLanguageChange={setLanguage} />}
+                />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/user-guide" element={<UserGuidePage />} />
-                <Route path="/upload-resume" element = {<UploadResume />} />
+                <Route path="/upload-resume" element={<UploadResume />} />
+                <Route path="/logout" element={<Logout />} />
               </Routes>
             </div>
           </div>
