@@ -10,7 +10,7 @@ const connectDB = require('./config/db.js');
 
 dotenv.config();
 
-const app = express(); // ✅ Must be declared before any `app.use(...)`
+const app = express(); 
 
 connectDB();
 
