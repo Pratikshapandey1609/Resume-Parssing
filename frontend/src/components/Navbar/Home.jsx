@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"; // Import Link
 import { motion } from "framer-motion";
 import Chatbot from "../Chatbot";
 import { useTranslation } from "react-i18next";
+import Logo from "/public/TalentFlux1.png";
 
 function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,15 +11,14 @@ function Home() {
   useEffect(() => {
     setIsVisible(true);
   }, []);
-  
+
   const { t } = useTranslation();
 
-
   return (
-    <div className="flex h-screen "> {/** // removing bg  for light dark mode  bg-gradient-to-r from-purple-600 to-red-500 */}
+    <div className="flex h-screen ">
+      {" "}
+      {/** // removing bg  for light dark mode  bg-gradient-to-r from-purple-600 to-red-500 */}
       {/* Sidebar */}
-      
-
       {/* Main Content with Animation */}
       <div className=" flex-1 flex items-center justify-center p-5">
         <motion.div
@@ -27,19 +27,26 @@ function Home() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="bg-gradient-to-br from-white/50 to-gray-200/50 p-10 rounded-2xl shadow-2xl backdrop-blur-md text-center max-w-3xl"
         >
-          <h1 className="text-5xl font-bold text-blue-900 animate-pulse">
-          TalentFlux 📄
-
+          <h1 className="text-5xl font-bold text-blue-900 animate-pulse flex items-center justify-center  gap-3">
+            TalentFlux
+            <img
+              src={Logo}
+              alt="Logo"
+              className="h-12 w-12 rounded-full shadow-md"
+            />
           </h1>
+
           <p className="text-gray-700 mt-4 font-sans text-lg font-bold">
-            {t("Extract, analyze, and categorize resumes efficiently with AI-powered parsing.")}
+            {t(
+              "Extract, analyze, and categorize resumes efficiently with AI-powered parsing."
+            )}
           </p>
           <p className="text-blue-600 font-sans font-semibold mt-2">
             "Automate. Analyze. Hire Faster."
           </p>
 
           {/* Animated Button with Link */}
-          <Link to = "/login">
+          <Link to="/login">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -50,13 +57,9 @@ function Home() {
           </Link>
         </motion.div>
       </div>
-
       <Chatbot />
-
-    
     </div>
   );
 }
 
 export default Home;
-

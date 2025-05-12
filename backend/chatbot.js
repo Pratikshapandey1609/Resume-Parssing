@@ -37,7 +37,7 @@
 
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const API_KEY = " https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBoliUcUGLCGYHjDMhz0AjTt0sFND6g3pM"; // Replace with your actual API key
+const API_KEY = " https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBoliUcUGLCGYHjDMhz0AjTt0sFND6g3pM"; 
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 async function runChat() {
@@ -49,7 +49,7 @@ async function runChat() {
         const chat = model.startChat();
         const result = await chat.sendMessage("Hello, how can you help?");
         
-        console.log(result.response.text()); // Print chatbot response
+        console.log(result.response.text()); 
     } catch (error) {
         console.error("Error:", error);
     }

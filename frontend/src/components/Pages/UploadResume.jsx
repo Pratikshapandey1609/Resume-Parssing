@@ -11,25 +11,49 @@ function UploadResume() {
   const jobRoles = ["Software Engineer", "Data Scientist", "UI/UX Designer", "Product Manager"];
   const companies = ["Google", "Microsoft", "Amazon", "Meta", "Tesla"];
 
-  const handleFileUpload = (e) => {
+  // const handleFileUpload = (e) => {
+  //   const uploadedFile = e.target.files[0];
+  //   setFile(uploadedFile);
+
+  //   // Simulating AI scoring (Random score)
+  //   setTimeout(() => {
+  //     const randomScore = Math.floor(Math.random() * 100) + 1;
+  //     setScore(randomScore);
+      
+  //     // Mock AI Suggestions
+  //     setSuggestions([
+  //       "Add more keywords relevant to the job description.",
+  //       "Use bullet points for better readability.",
+  //       "Ensure your resume is under two pages.",
+  //       "Include quantifiable achievements in experience section."
+  //     ]);
+  //   }, 2000);
+  // };
+  
+  const handleFileUpload = async (e) => {
     const uploadedFile = e.target.files[0];
     setFile(uploadedFile);
-
-    // Simulating AI scoring (Random score)
-    setTimeout(() => {
-      const randomScore = Math.floor(Math.random() * 100) + 1;
-      setScore(randomScore);
-      
-      // Mock AI Suggestions
-      setSuggestions([
-        "Add more keywords relevant to the job description.",
-        "Use bullet points for better readability.",
-        "Ensure your resume is under two pages.",
-        "Include quantifiable achievements in experience section."
-      ]);
-    }, 2000);
+  
+    const formData = new FormData();
+    formData.append("resume", uploadedFile);
+    formData.append("jobRole", jobRole);
+    formData.append("company", company);
+  
+    try {
+      const res = await fetch("http://localhost:5000/api/resume/upload", {
+        method: "POST",
+        body: formData,
+      });
+  
+      const data = await res.json();
+  
+      setScore(data.score);
+      setSuggestions(data.suggestions); // assuming backend returns this
+    } catch (err) {
+      console.error("Upload failed", err);
+    }
   };
-
+  
   return (
     <div className="flex flex-col items-center justify-center min-h-screen  p-6">
       <div className="bg-white p-8 rounded-2xl shadow-2xl text-center max-w-3xl w-full">

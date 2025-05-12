@@ -2,34 +2,41 @@ import React from "react";
 import { motion } from "framer-motion";
 import Chatbot from "../Chatbot";
 
+import Resume2 from "/public/resume2.png";
+import Resume3 from "/public/resume3.png";
+import Resume4 from "/public/resume4.png";
+import Resume5 from "/public/resume5.png";
+import Logo from "/public/TalentFlux1.png";
+
 const resumeTemplates = [
+  
   {
     id: 1,
-    name: "Modern Resume",
-    description: "A sleek and modern template with a professional touch.",
-    image: "/assets/resume1.png",
-    link: "/templates/resume1.pdf",
+    name: "Corporate Resume",
+    description: "Ideal for business professionals and executives.",
+    image: Resume4,
+    link: Resume4,
   },
   {
     id: 2,
-    name: "Creative Resume",
-    description: "Perfect for designers and creatives with a unique layout.",
-    image: "/assets/resume2.png",
-    link: "/templates/resume2.pdf",
+    name: "Minimalist Resume",
+    description: "A simple and clean design focused on content.",
+    image: Resume3,
+    link: Resume3,
   },
   {
     id: 3,
-    name: "Minimalist Resume",
-    description: "A simple and clean design focused on content.",
-    image: "/assets/resume3.png",
-    link: "/templates/resume3.pdf",
+    name: "Corporate Resume",
+    description: "Ideal for business professionals and executives.",
+    image: Resume2,
+    link: Resume2,
   },
   {
     id: 4,
-    name: "Corporate Resume",
-    description: "Ideal for business professionals and executives.",
-    image: "/assets/resume4.png",
-    link: "/templates/resume4.pdf",
+    name: "Modern Resume",
+    description: "A sleek and modern template with a professional touch.",
+    image: Resume5,
+    link: Resume5,
   },
 ];
 
@@ -49,7 +56,17 @@ const ResumeTemplates = ({ isNavbarOpen }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            📄 Best Resume Templates
+          
+            <div className="flex items-center justify-center gap-4 m-8">
+              <img
+                src={Logo}
+                alt="Logo"
+                className="h-12 w-12 rounded-full shadow-md"
+              />
+              <h2 className="text-4xl font-extrabold text-blue-900">
+                Best Resume Templates
+              </h2>
+            </div>
           </motion.h2>
 
           {/* Resume Cards */}
@@ -65,7 +82,7 @@ const ResumeTemplates = ({ isNavbarOpen }) => {
                 <img
                   src={template.image}
                   alt={template.name}
-                  className="rounded-lg w-full h-48 object-cover shadow-md"
+                  className="rounded-lg w-full  shadow-md"
                 />
 
                 {/* Template Info */}
@@ -76,16 +93,26 @@ const ResumeTemplates = ({ isNavbarOpen }) => {
                   {template.description}
                 </p>
 
-                {/* Download Button */}
-                <motion.a
-                  href={template.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium py-2 px-6 rounded-full shadow-md hover:scale-105 transition-all"
-                  whileHover={{ scale: 1.1 }}
-                >
-                  Preview / Download
-                </motion.a>
+                <div className="flex gap-4 mt-4">
+                  <motion.a
+                    href={template.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    Preview
+                  </motion.a>
+
+                  <motion.a
+                    href={template.link}
+                    download
+                    className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition-all"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    Download
+                  </motion.a>
+                </div>
               </motion.div>
             ))}
           </div>

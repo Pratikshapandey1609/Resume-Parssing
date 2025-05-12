@@ -1,0 +1,6 @@
+We are hiring a Full Stack Developer with strong knowledge in:
+- React.js and frontend frameworks
+- Node.js and backend API development
+- MongoDB or SQL databases
+- Good communication and team collaboration
+- 1-2 years experience in real-world projects

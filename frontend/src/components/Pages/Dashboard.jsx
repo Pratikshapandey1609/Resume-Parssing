@@ -1,67 +1,3 @@
-// import React, { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
-// import { motion } from "framer-motion";
-// import { useTranslation } from "react-i18next";
-
-// function Dashboard() {
-//   const { t } = useTranslation();
-//   const [isVisible, setIsVisible] = useState(false);
-
-//   useEffect(() => {
-//     setIsVisible(true);
-//   }, []);
-
-//   return (
-//     <div className="flex flex-col items-center justify-center min-h-screen p-6">
-//       <motion.div
-//         initial={{ opacity: 0, scale: 0.8 }}
-//         animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.8 }}
-//         transition={{ duration: 0.8, ease: "easeOut" }}
-//         className="bg-white p-8 rounded-2xl shadow-2xl text-center max-w-3xl w-full"
-//       >
-//         <h1 className="text-4xl font-extrabold text-blue-900 animate-pulse">
-//           {t("AI Resume Analyzer")}
-//         </h1>
-//         <p className="text-gray-700 mt-3 text-lg font-semibold">
-//           {t("Choose a resume template or upload your own for AI analysis.")}
-//         </p>
-
-//         {/* Button Container */}
-//         <div className="mt-6 flex flex-col md:flex-row gap-6">
-//           {/* Resume Templates */}
-//           <Link to="/templates" className="flex-1">
-//             <motion.button
-//               whileHover={{ scale: 1.05 }}
-//               whileTap={{ scale: 0.95 }}
-//               className="w-full bg-green-600 hover:bg-green-800 text-white px-6 py-4 rounded-lg text-lg font-bold transition-all shadow-lg"
-//             >
-//               {t("Resume Templates")}
-//             </motion.button>
-//           </Link>
-
-//           {/* Upload Resume */}
-//           <Link to="/upload-resume" className="flex-1">
-//             <motion.button
-//               whileHover={{ scale: 1.05 }}
-//               whileTap={{ scale: 0.95 }}
-//               className="w-full bg-blue-600 hover:bg-blue-900 text-white px-6 py-4 rounded-lg text-lg font-bold transition-all shadow-lg"
-//             >
-//               {t("Upload Your Resume")}
-//             </motion.button>
-//           </Link>
-//         </div>
-//       </motion.div>
-//     </div>
-//   );
-// }
-
-// export default Dashboard;
-
-
-
-
-
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -168,8 +104,76 @@ function Dashboard() {
           </ul>
         </div>
       </motion.div>
+
     </div>
   );
 }
 
 export default Dashboard;
+
+
+
+
+
+
+// import React, { useState, useEffect } from "react";
+// import { Link } from "react-router-dom";
+// import { motion } from "framer-motion";
+// import { useTranslation } from "react-i18next";
+
+// function Dashboard() {
+//   const { t } = useTranslation();
+//   const [isVisible, setIsVisible] = useState(false);
+
+//   useEffect(() => {
+//     setIsVisible(true);
+//   }, []);
+
+//   return (
+//     <div className="flex flex-col items-center justify-center min-h-screen p-6">
+//       <motion.div
+//         initial={{ opacity: 0, scale: 0.8 }}
+//         animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.8 }}
+//         transition={{ duration: 0.8, ease: "easeOut" }}
+//         className="bg-white p-8 rounded-2xl shadow-2xl text-center max-w-3xl w-full"
+//       >
+//         <h1 className="text-4xl font-extrabold text-blue-900 animate-pulse">
+//           {t("AI Resume Analyzer")}
+//         </h1>
+//         <p className="text-gray-700 mt-3 text-lg font-semibold">
+//           {t("Choose a resume template or upload your own for AI analysis.")}
+//         </p>
+
+//         {/* Button Container */}
+//         <div className="mt-6 flex flex-col md:flex-row gap-6">
+//           {/* Resume Templates */}
+//           <Link to="/templates" className="flex-1">
+//             <motion.button
+//               whileHover={{ scale: 1.05 }}
+//               whileTap={{ scale: 0.95 }}
+//               className="w-full bg-green-600 hover:bg-green-800 text-white px-6 py-4 rounded-lg text-lg font-bold transition-all shadow-lg"
+//             >
+//               {t("Resume Templates")}
+//             </motion.button>
+//           </Link>
+
+//           {/* Upload Resume */}
+//           <Link to="/upload-resume" className="flex-1">
+//             <motion.button
+//               whileHover={{ scale: 1.05 }}
+//               whileTap={{ scale: 0.95 }}
+//               className="w-full bg-blue-600 hover:bg-blue-900 text-white px-6 py-4 rounded-lg text-lg font-bold transition-all shadow-lg"
+//             >
+//               {t("Upload Your Resume")}
+//             </motion.button>
+//           </Link>
+//         </div>
+//       </motion.div>
+//     </div>
+//   );
+// }
+
+// export default Dashboard;
+
+
+
